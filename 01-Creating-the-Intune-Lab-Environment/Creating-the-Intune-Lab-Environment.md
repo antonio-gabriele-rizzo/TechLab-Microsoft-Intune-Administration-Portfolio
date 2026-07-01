@@ -380,7 +380,7 @@ When creating a Microsoft Intune laboratory:
 
 A medium-sized organisation decides to introduce Microsoft Intune to centrally manage employee laptops and mobile devices.
 
-Instead of creating a new Microsoft tenant, the IT department extends its existing Microsoft 365 environment by adding Microsoft Intune Plan 1.
+Instead of creating a new Microsoft tenant, the IT department extends its existing Microsoft 365 environment by adding the Microsoft Intune Plan.
 
 Once activated, administrators configure security policies, enrol employee devices, deploy Microsoft applications and monitor compliance through the Microsoft Intune Admin Center.
 
