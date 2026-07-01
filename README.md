@@ -131,19 +131,17 @@ TechLab-Microsoft-Intune-Administration-Portfolio
 
 ## 01 – Creating the Intune Lab Environment
 
-Create and configure a Microsoft Intune trial environment from scratch.
+Create a Microsoft Intune laboratory using an existing Microsoft 365 tenant.
 
-### Topics covered
+**Topics covered:**
 
-- Introduction to Microsoft Intune
+- Microsoft Intune overview
 - Licensing requirements
 - Microsoft Intune Plan 1 Trial
 - Creating the trial
 - Using an existing Microsoft 365 tenant
-- Configuring renewal settings
-- Subscription verification
-- Accessing Microsoft Intune Admin Center
-- Verifying successful provisioning
+- Verifying the subscription
+- Accessing the Microsoft Intune Admin Center
 
 ### Skills developed
 
@@ -157,9 +155,9 @@ Create and configure a Microsoft Intune trial environment from scratch.
 
 ## 02 – Intune Administration Center Overview
 
-Explore the Microsoft Intune Admin Center and understand its management capabilities.
+Explore the Microsoft Intune Admin Center and become familiar with the main administrative areas.
 
-### Topics covered
+**Topics covered:**
 
 - Home
 - Dashboard
@@ -170,10 +168,6 @@ Explore the Microsoft Intune Admin Center and understand its management capabili
 - Endpoint Security
 - Reports
 - Tenant Administration
-- Navigation
-- Search functionality
-- Favourites
-- Notifications
 
 ### Skills developed
 
