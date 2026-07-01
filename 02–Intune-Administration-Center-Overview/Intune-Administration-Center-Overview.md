@@ -2,26 +2,26 @@
 
 ## Introduction
 
-The Microsoft Intune Admin Center is the central portal used to manage devices, applications, security policies and endpoint compliance.
+The Microsoft Intune Admin Center is the central portal used to manage devices, applications, security policies and endpoint compliance within an organisation.
 
-This chapter introduces the main areas of the Microsoft Intune Admin Center and explains their purpose. No configuration changes are performed during this chapter.
+Before administrators can enrol devices or deploy security policies, they must become familiar with the layout of the portal and understand where the main administrative tasks are performed.
 
-Understanding the portal layout is essential before enrolling devices and creating policies in later chapters.
+This chapter introduces the Microsoft Intune Admin Center and explains the purpose of its main management areas. No configuration changes are performed during this chapter. The objective is simply to become familiar with the interface before beginning hands-on administration in the following chapters.
 
 ---
 
 # Objectives
 
-By completing this chapter you will learn how to:
+After completing this chapter, you should be able to:
 
 - Navigate the Microsoft Intune Admin Center
-- Understand the purpose of the Dashboard
+- Understand the purpose of the main administrative areas
 - Locate device management features
 - Locate user and group management
-- Explore application management
-- Understand Endpoint Security
-- Locate reporting tools
-- Explore Tenant Administration
+- Locate application management
+- Locate Endpoint Security
+- Locate reporting features
+- Locate Tenant Administration
 
 ---
 
@@ -31,28 +31,29 @@ Before starting this chapter, ensure you have:
 
 - Microsoft Intune Plan 1 Trial activated
 - Access to the Microsoft Intune Admin Center
-- Global Administrator or Intune Administrator permissions
+- Global Administrator permissions
 
 ---
 
-# Microsoft Intune Admin Center
+# Opening Microsoft Intune Admin Center
 
-The Microsoft Intune Admin Center is Microsoft's cloud portal used to manage organisational devices and applications.
-
-It provides administrators with a single location to:
-
-- Manage enrolled devices
-- Deploy applications
-- Configure security policies
-- Monitor compliance
-- Generate reports
-- Perform remote administrative actions
-
-After successfully activating Microsoft Intune, administrators can access the portal by visiting:
+Microsoft Intune can be accessed directly by opening:
 
 ```text
 https://intune.microsoft.com
 ```
+
+Alternatively, from the Microsoft 365 Admin Center navigate to:
+
+```text
+Show all
+    └── Admin centers
+            └── Microsoft Intune
+```
+
+After signing in, the Microsoft Intune Admin Center Home page is displayed.
+
+This page acts as the starting point for all Microsoft Intune administration tasks.
 
 ![Microsoft Intune Admin Center](screenshots/intune-admin-center-home.png)
 
@@ -60,17 +61,19 @@ https://intune.microsoft.com
 
 # Dashboard
 
-The Dashboard provides a quick overview of the current Microsoft Intune environment.
+The Dashboard provides an overview of the Microsoft Intune environment.
 
-From this page administrators can immediately identify:
+It allows administrators to quickly understand the current state of the tenant without navigating through multiple menus.
 
-- Device enrolment status
-- Compliance status
-- Configuration status
-- Application status
-- General tenant health
+From the Dashboard administrators can obtain information about:
 
-When managing large numbers of devices, the dashboard provides a useful summary of the environment.
+- Devices
+- Compliance
+- Applications
+- Endpoint Security
+- Tenant health
+
+As additional devices are enrolled later in this repository, the Dashboard will begin displaying useful management information.
 
 ![Dashboard Overview](screenshots/intune-dashboard-overview.png)
 
@@ -78,26 +81,27 @@ When managing large numbers of devices, the dashboard provides a useful summary 
 
 # Devices
 
-The **Devices** section is where administrators manage enrolled devices.
+The **Devices** section is one of the most frequently used areas within Microsoft Intune.
 
-From this area it is possible to:
+Once computers or mobile devices have been enrolled, administrators use this section to monitor their status and perform management tasks remotely.
 
-- View all managed devices
-- Monitor device health
-- Organise devices by platform
-- Create compliance policies
+From this page administrators can:
+
+- View enrolled devices
+- Review hardware information
+- Check compliance status
 - Deploy configuration profiles
 - Perform remote management actions
 
-Supported platforms include:
+Microsoft Intune supports multiple operating systems including:
 
 - Windows
 - Android
-- Apple mobile (iOS/iPadOS)
+- iOS/iPadOS
 - macOS
 - Linux
 
-As this is a newly created laboratory, no devices have been enrolled yet.
+At this stage of the laboratory no devices are displayed because device enrolment is performed later in **Chapter 04 – Android Device Enrollment**.
 
 ![Devices Overview](screenshots/intune-devices-overview.png)
 
@@ -107,14 +111,16 @@ As this is a newly created laboratory, no devices have been enrolled yet.
 
 The **Users** section displays Microsoft Entra ID users that can access organisational resources.
 
-Administrators can:
+Although user accounts are created within Microsoft Entra ID, Microsoft Intune uses those identities to manage enrolled devices.
+
+Administrators commonly use this section to:
 
 - View users
-- Assign licenses
-- Review user devices
-- Troubleshoot user-related issues
+- Review assigned licences
+- View managed devices
+- Troubleshoot user issues
 
-In later chapters, users will be assigned Microsoft Intune licenses before enrolling devices.
+In the next chapter, users will be prepared for Microsoft Intune by assigning the required licences and permissions.
 
 ![Users Overview](screenshots/intune-users-overview.png)
 
@@ -122,16 +128,16 @@ In later chapters, users will be assigned Microsoft Intune licenses before enrol
 
 # Groups
 
-Groups simplify administration by allowing policies and applications to be assigned to multiple users or devices simultaneously.
+Groups simplify administration by allowing applications and policies to be assigned to multiple users or devices simultaneously.
 
-Rather than configuring each user individually, administrators assign resources to groups.
+Instead of configuring each user individually, administrators assign resources to groups, making management much easier.
 
 Microsoft Intune supports:
 
-- User groups
-- Device groups
+- User Groups
+- Device Groups
 
-Groups will be used throughout this repository to deploy policies and applications.
+Throughout this repository, groups will be used when deploying applications and assigning compliance policies.
 
 ![Groups Overview](screenshots/intune-groups-overview.png)
 
@@ -139,16 +145,26 @@ Groups will be used throughout this repository to deploy policies and applicatio
 
 # Apps
 
-The **Apps** section is used to deploy and manage software across enrolled devices.
+The **Apps** section is used to deploy and manage applications across enrolled devices.
 
-Administrators can:
+One of the main advantages of Microsoft Intune is that applications can be installed remotely without requiring physical access to a user's device. This saves time for IT departments and ensures users receive the software they need in a consistent and secure manner.
+
+From this area administrators can:
 
 - Add applications
 - Assign required applications
 - Publish available applications
-- Monitor application deployment
+- Monitor installation status
+- Remove applications when required
 
-Later chapters will demonstrate deploying Microsoft applications such as Microsoft Edge and Microsoft Authenticator.
+Common applications managed through Microsoft Intune include:
+
+- Microsoft Edge
+- Microsoft Outlook
+- Microsoft Teams
+- Microsoft Authenticator
+
+Application deployment is covered in detail in **Chapter 07 – Application Deployment**.
 
 ![Apps Overview](screenshots/intune-apps-overview.png)
 
@@ -156,25 +172,30 @@ Later chapters will demonstrate deploying Microsoft applications such as Microso
 
 # Endpoint Security
 
-The **Endpoint Security** section centralises security configuration for managed devices.
+The **Endpoint Security** section allows administrators to configure security policies that help protect managed devices.
+
+Rather than configuring each device manually, administrators can deploy security settings to many devices simultaneously.
 
 Examples include:
 
-- Microsoft Defender
-- Antivirus policies
-- Firewall settings
+- Microsoft Defender Antivirus
+- Firewall policies
+- Disk encryption
 - Security Baselines
-- Disk Encryption
 
-These features help organisations secure their managed endpoints.
+Using centrally managed security policies helps organisations maintain a consistent security standard across all managed devices.
 
-![Endpoint Security](screenshots/intune-endpoint-security-overview.png)
+Endpoint Security will be explored further in **Chapter 09 – Endpoint Security**.
+
+![Endpoint Security Overview](screenshots/intune-endpoint-security-overview.png)
 
 ---
 
 # Reports
 
-The **Reports** section provides administrators with information about the health of the Microsoft Intune environment.
+Monitoring devices is an important part of endpoint management.
+
+The **Reports** section provides administrators with information about the overall health of the Microsoft Intune environment.
 
 Reports can be used to review:
 
@@ -182,9 +203,11 @@ Reports can be used to review:
 - Device inventory
 - Application deployment
 - Policy status
-- Enrolment statistics
+- Device enrolment
 
-Reporting assists administrators when monitoring large device deployments.
+These reports help administrators quickly identify devices that require attention and verify that deployments have completed successfully.
+
+As additional devices are enrolled throughout this repository, the Reports section will become increasingly useful.
 
 ![Reports Overview](screenshots/intune-reports-overview.png)
 
@@ -192,18 +215,21 @@ Reporting assists administrators when monitoring large device deployments.
 
 # Tenant Administration
 
-The **Tenant Administration** section contains settings that apply to the Microsoft Intune environment.
+The **Tenant Administration** section contains settings that affect the Microsoft Intune environment as a whole.
 
-Typical administrative tasks include:
+Unlike the previous sections, which focus on managing users or devices, Tenant Administration is used to configure global settings for the organisation.
 
-- Managing tenant settings
-- Customising notifications
-- Reviewing connector status
-- Configuring organisational preferences
+Examples include:
 
-These settings affect the entire Microsoft Intune tenant.
+- Tenant-wide settings
+- Connectors
+- Customisation
+- Organisational preferences
+- Administrative configuration
 
-![Tenant Administration](screenshots/intune-tenant-administration-overview.png)
+Most of these settings are configured during the initial deployment of Microsoft Intune and are reviewed only occasionally afterwards.
+
+![Tenant Administration Overview](screenshots/intune-tenant-administration-overview.png)
 
 ---
 
@@ -212,34 +238,51 @@ These settings affect the entire Microsoft Intune tenant.
 By completing this chapter you have learned how to:
 
 - Navigate the Microsoft Intune Admin Center
-- Locate the major administrative sections
-- Understand the purpose of each management area
-- Prepare for device enrolment and policy deployment
+- Understand the purpose of each major administrative area
+- Identify where devices, users and groups are managed
+- Locate application management
+- Locate Endpoint Security
+- Locate reporting features
+- Locate Tenant Administration
+
+This knowledge provides the foundation required for the practical configuration tasks performed in the following chapters.
 
 ---
 
 # Skills Developed
 
+By completing this chapter, the following skills were developed:
+
 - Microsoft Intune navigation
 - Endpoint management fundamentals
 - Administrative portal familiarity
 - Microsoft Intune administration
+- Technical documentation
 
 ---
 
 # Interview Tip
 
-A Junior Microsoft Intune Administrator should be able to explain the purpose of the main areas of the Microsoft Intune Admin Center, including Devices, Users, Groups, Apps, Endpoint Security, Reports and Tenant Administration.
+For junior IT Support and Microsoft Intune Administrator roles, you are not expected to know every feature available within Microsoft Intune.
 
-Understanding where administrative tasks are performed is an important foundation before configuring devices and security policies.
+However, you should be able to explain:
+
+- What Microsoft Intune is.
+- The purpose of the main areas of the Admin Center.
+- Where administrators manage devices.
+- Where applications are deployed.
+- Where security policies are configured.
+- Where reports can be viewed.
+
+Understanding the structure of the Admin Center demonstrates that you are comfortable navigating the platform and know where common administrative tasks are performed.
 
 ---
 
 # Chapter Summary
 
-In this chapter you explored the Microsoft Intune Admin Center and became familiar with the main administrative areas used to manage an organisation's devices.
+In this chapter you explored the Microsoft Intune Admin Center and became familiar with the main administrative areas used by administrators.
 
-The following areas were introduced:
+The following sections were introduced:
 
 - Dashboard
 - Devices
@@ -250,4 +293,6 @@ The following areas were introduced:
 - Reports
 - Tenant Administration
 
-The next chapter prepares users and groups for device enrolment by assigning licenses and creating the administrative structure required for Microsoft Intune.
+Although no configuration changes were made, this chapter provides the foundation for the remainder of the repository.
+
+In the next chapter, users and groups will be prepared for device enrolment by assigning the required licences and reviewing the administrative structure used within Microsoft Intune.
