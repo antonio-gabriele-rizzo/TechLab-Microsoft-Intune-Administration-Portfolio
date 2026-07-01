@@ -137,19 +137,28 @@ Throughout this repository, these three Microsoft services work together to prov
 
 # Licensing Requirements
 
-Microsoft Intune requires an appropriate subscription before devices can be managed.
+Microsoft Intune requires an appropriate Microsoft licence before devices can be enrolled and managed.
 
-Several licensing options are available, including:
+Common licensing options include:
 
 - Microsoft Intune Plan 1
-- Microsoft Intune Plan 2
 - Microsoft 365 Business Premium
 - Microsoft 365 E3
 - Microsoft 365 E5
 
-For this laboratory, Microsoft Intune Plan 1 Trial is used.
+For this laboratory, **Microsoft Intune Plan 1 Trial** was used.
 
-The trial provides sufficient functionality to explore the Microsoft Intune Admin Center, enrol devices, configure compliance policies and perform endpoint administration.
+The trial provides sufficient functionality to:
+
+- Explore the Microsoft Intune Admin Center
+- Enrol Android devices
+- Configure compliance policies
+- Deploy configuration profiles
+- Deploy applications
+- Perform remote device administration
+- Explore Endpoint Security features
+
+This provides an excellent environment for learning Microsoft Intune administration without requiring a paid production subscription.
 
 ---
 
