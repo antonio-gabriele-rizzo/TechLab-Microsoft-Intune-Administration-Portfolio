@@ -229,7 +229,7 @@ By completing this chapter you have learned how to:
 
 # Interview Tip
 
-A Junior Microsoft Intune Administrator should be be able to explain the purpose of the main areas of the Microsoft Intune Admin Center, including Devices, Users, Groups, Apps, Endpoint Security, Reports and Tenant Administration.
+A Junior Microsoft Intune Administrator should be able to explain the purpose of the main areas of the Microsoft Intune Admin Center, including Devices, Users, Groups, Apps, Endpoint Security, Reports and Tenant Administration.
 
 Understanding where administrative tasks are performed is an important foundation before configuring devices and security policies.
 
