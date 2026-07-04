@@ -73,7 +73,7 @@ From this page administrators can review important information including:
 - Account status
 - Contact information
 
-During this repository these users will be used to enrol devices, receive applications and evaluate compliance policies.
+During this repository, these users will be used to enrol devices, receive applications and evaluate compliance policies.
 
 No changes are required at this stage because the accounts were prepared during the Microsoft Entra ID laboratory.
 
