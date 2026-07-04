@@ -4,11 +4,13 @@
 
 Before devices can be enrolled into Microsoft Intune, the appropriate users and groups must be prepared.
 
-Microsoft Intune relies on Microsoft Entra ID identities to authenticate users, assign applications, deploy policies and control access to organisational resources.
+Microsoft Intune does not maintain its own identity database. Instead, it relies on Microsoft Entra ID to provide user identities, Security Groups and administrative roles.
 
-Preparing users and groups correctly helps simplify administration and ensures applications and policies can be deployed consistently across multiple users and devices.
+This integration allows administrators to deploy applications, assign compliance policies, configure devices and manage security using existing Microsoft Entra ID identities.
 
-In this chapter, the user accounts and Security Groups created during the Microsoft Entra ID laboratory are reviewed and prepared for Microsoft Intune device enrolment.
+Preparing users and Security Groups before enrolling devices helps ensure that applications and policies can be assigned efficiently while maintaining a consistent administrative structure.
+
+In this chapter, the users and Security Groups created during the Microsoft Entra ID laboratory are reviewed and verified to ensure the Microsoft Intune environment is ready for device enrolment.
 
 ---
 
@@ -16,12 +18,12 @@ In this chapter, the user accounts and Security Groups created during the Micros
 
 After completing this chapter, I will be able to:
 
-- Review existing Microsoft Entra ID users.
+- Review the existing Microsoft Entra ID users.
 - Verify the Microsoft Intune subscription.
 - Review existing Security Groups.
 - Verify group membership.
 - Review administrative roles.
-- Confirm that the environment is ready for device enrolment.
+- Confirm that the Microsoft Intune environment is ready for device enrolment.
 
 ---
 
@@ -38,13 +40,13 @@ Before starting this chapter, I had already:
 
 # Why Users and Groups Are Important
 
-Microsoft Intune uses Microsoft Entra ID to identify users and devices.
+Microsoft Intune uses Microsoft Entra ID to identify users and control access to organisational resources.
 
-Every enrolled device is linked to a user account, allowing administrators to deploy applications, assign compliance policies and manage configuration profiles.
+Whenever a device is enrolled, it becomes associated with a user account. This relationship enables administrators to deploy applications, assign compliance policies, configure security settings and monitor devices throughout their lifecycle.
 
-Rather than assigning policies to individual users, organisations typically assign them to Security Groups. This approach simplifies administration, improves consistency and makes future management significantly easier.
+Rather than assigning policies individually, organisations normally assign them to Security Groups. Every member of the group automatically receives the assigned applications and policies, making administration considerably easier and reducing the risk of configuration errors.
 
-Throughout the remainder of this repository, the existing **IT Support Team** Security Group will be reused when assigning applications and policies.
+Because the Security Groups were already created during the Microsoft Entra ID laboratory, they can now be reused throughout the remainder of this repository.
 
 ---
 
@@ -61,15 +63,19 @@ Users
 
 The **Users** page displays every Microsoft Entra ID account available within the tenant.
 
-From this page it is possible to:
+Although user accounts are created in Microsoft Entra ID, they are also visible from the Microsoft Intune Admin Center because both services share the same identity platform.
 
-- View user accounts.
-- Manage licences.
-- Reset passwords.
-- Review assigned roles.
-- Monitor account information.
+From this page administrators can review important information including:
 
-The users created during the Microsoft Entra ID laboratory will be reused throughout this repository.
+- User accounts
+- Assigned licences
+- Assigned administrative roles
+- Account status
+- Contact information
+
+During this repository these users will be used to enrol devices, receive applications and evaluate compliance policies.
+
+No changes are required at this stage because the accounts were prepared during the Microsoft Entra ID laboratory.
 
 ![Users Overview](screenshots/entra-users-overview.png)
 
@@ -77,7 +83,7 @@ The users created during the Microsoft Entra ID laboratory will be reused throug
 
 # Verifying the Microsoft Intune Subscription
 
-Before devices can be enrolled, Microsoft Intune must be available within the Microsoft 365 tenant.
+Before devices can be enrolled, the Microsoft Intune subscription must be available within the Microsoft 365 tenant.
 
 Navigate to:
 
@@ -88,9 +94,13 @@ Billing
     └── Your products
 ```
 
-Review the available subscriptions and confirm that **Microsoft Intune Plan 1** is active.
+Review the list of available subscriptions and confirm that **Microsoft Intune Plan 1** is listed as **Active**.
 
-This confirms that the tenant is licensed for Microsoft Intune administration.
+This confirms that the tenant is licensed to manage devices using Microsoft Intune.
+
+Without an appropriate licence, devices cannot be enrolled or managed.
+
+Although Microsoft Intune supports several licensing models, the **Microsoft Intune Plan 1 Trial** provides every feature required for this laboratory.
 
 ![Microsoft Intune Subscription](screenshots/licences.png)
 
@@ -107,9 +117,11 @@ Groups
     └── All groups
 ```
 
-Security Groups allow administrators to assign applications, compliance policies and configuration profiles to multiple users simultaneously.
+Security Groups are one of the most important administrative features within Microsoft Intune.
 
-Using groups instead of assigning resources individually simplifies administration and improves consistency across the organisation.
+Rather than assigning applications, compliance policies or configuration profiles individually, administrators normally assign them to Security Groups.
+
+Any user who becomes a member of the group automatically receives the assigned resources, making administration more efficient and ensuring a consistent configuration across multiple users and devices.
 
 Locate the **IT Support Team** Security Group created during the Microsoft Entra ID laboratory.
 
@@ -121,15 +133,19 @@ Locate the **IT Support Team** Security Group created during the Microsoft Entra
 
 Open the **IT Support Team** Security Group.
 
-The Overview page displays useful information including:
+The Overview page provides information about the group, including:
 
-- Group name.
-- Group type.
-- Membership type.
-- Creation date.
-- Number of members.
+- Group name
+- Group type
+- Membership type
+- Creation date
+- Number of members
 
-This existing Security Group will be reused throughout the remaining chapters when deploying applications, assigning compliance policies and configuring device settings.
+Reviewing the Overview page confirms that the Security Group was created successfully and is ready to be used throughout the Microsoft Intune laboratory.
+
+This Security Group will be reused in later chapters when deploying applications, assigning compliance policies and configuring device settings.
+
+Using an existing Security Group also reflects how Microsoft Intune is typically deployed in enterprise environments, where identities and groups are usually created before endpoint management begins.
 
 ![IT Support Team Security Group](screenshots/intune-security-group.png)
 
@@ -137,9 +153,9 @@ This existing Security Group will be reused throughout the remaining chapters wh
 
 # Reviewing Group Membership
 
-Open the **IT Support Team** Security Group.
+After confirming that the **IT Support Team** Security Group exists, the next step is to verify its membership.
 
-Navigate to:
+Open the group and navigate to:
 
 ```text
 Members
@@ -147,15 +163,21 @@ Members
 
 The **Members** page displays every user currently assigned to the Security Group.
 
-Reviewing group membership confirms that the correct users will receive any applications, compliance policies and configuration profiles assigned to the group.
+Reviewing group membership is an important administrative task because Microsoft Intune frequently deploys applications, compliance policies and configuration profiles to Security Groups rather than individual users.
 
-For this laboratory, the **Helpdesk User** account is a member of the **IT Support Team** Security Group.
+Using groups makes administration simpler, improves consistency and reduces the amount of manual configuration required when additional users join the organisation.
+
+For this laboratory, the **Helpdesk User** account is already a member of the **IT Support Team** Security Group.
+
+This confirms that the group is ready to receive future assignments.
 
 ![Group Membership](screenshots/intune-group-membership.png)
 
 ---
 
 # Reviewing User Group Membership
+
+It is also useful to verify group membership from the user's perspective.
 
 Navigate to:
 
@@ -169,7 +191,9 @@ Users
 
 The **Groups** page displays every Microsoft Entra ID group to which the selected user belongs.
 
-Reviewing group membership is an important administrative task because many Microsoft Intune resources are assigned to Security Groups rather than directly to individual users.
+Reviewing user membership confirms that the correct Security Groups have been assigned before applications and policies are deployed.
+
+If a user is missing from the appropriate Security Group, any applications or compliance policies assigned to that group will not be applied.
 
 The **Helpdesk User** account is correctly assigned to the **IT Support Team** Security Group.
 
@@ -178,6 +202,8 @@ The **Helpdesk User** account is correctly assigned to the **IT Support Team** S
 ---
 
 # Reviewing Administrative Roles
+
+Microsoft Entra ID controls administrative permissions for Microsoft Intune.
 
 Navigate to:
 
@@ -189,15 +215,21 @@ Users
             └── Assigned roles
 ```
 
-Microsoft Entra ID uses administrative roles to control access to Microsoft cloud services, including Microsoft Intune.
+The **Assigned roles** page displays the directory roles assigned to the administrator account.
 
-Reviewing assigned roles confirms that the administrator account has the permissions required to manage the Microsoft Intune environment.
+Administrative roles determine which management tasks can be performed within Microsoft Intune and other Microsoft cloud services.
+
+For this laboratory, the administrator account has the permissions required to manage the Microsoft Intune environment.
+
+Reviewing administrative roles before enrolling devices is considered good administrative practice because it confirms that sufficient permissions are available to complete future configuration tasks.
 
 ![Assigned Roles](screenshots/entra-user-directory-roles.png)
 
 ---
 
 # Confirming the Environment Is Ready for Device Enrolment
+
+Before enrolling a device, it is useful to perform one final review of the administrator account.
 
 Navigate to:
 
@@ -209,27 +241,30 @@ Users
             └── Overview
 ```
 
-The **Overview** page provides a summary of the administrator account, including:
+The **Overview** page provides a summary of the account, including:
 
 - Account status
 - Assigned licence
-- Assigned role
+- Assigned directory role
 - Group memberships
+- Contact information
 
-Reviewing this information confirms that the laboratory environment has been prepared correctly before beginning device enrolment.
+Reviewing this information confirms that the laboratory environment has been prepared correctly and that no additional user configuration is required before beginning device enrolment.
 
-![User Ready for Enrolment](screenshots/intune-user-ready-for-enrolment.png)
+The Microsoft Intune environment is now ready for the practical configuration tasks covered in the following chapters.
+
+![User Ready for Device Enrolment](screenshots/intune-user-ready-for-enrolment.png)
 
 ---
 
 # Key Learnings
 
-- Microsoft Intune uses Microsoft Entra ID users to identify and manage enrolled devices.
-- Security Groups simplify the deployment of applications and policies.
-- Group membership should be verified before assigning applications or policies.
+- Microsoft Intune uses Microsoft Entra ID to provide user identities and Security Groups.
+- Every managed device is associated with a Microsoft Entra ID user account.
+- Security Groups simplify the deployment of applications, compliance policies and configuration profiles.
+- Reviewing group membership helps ensure users receive the correct assignments.
 - Administrative roles determine which management tasks can be performed.
-- Reviewing user information before device enrolment helps prevent configuration issues.
-- Preparing users and groups is an essential step before enrolling devices.
+- Verifying the environment before device enrolment helps prevent configuration issues.
 
 ---
 
@@ -246,20 +281,18 @@ Reviewing this information confirms that the laboratory environment has been pre
 
 # Interview Tip
 
-For junior Microsoft Intune and IT Support roles, it is important to understand that Microsoft Intune relies on Microsoft Entra ID for identity management.
+For junior Microsoft Intune and IT Support roles, it is important to understand that Microsoft Intune does not manage identities independently.
 
-Users, Security Groups and administrative roles are created in Microsoft Entra ID and are then used throughout Microsoft Intune when deploying applications, assigning policies and managing devices.
+Users, Security Groups and administrative roles are provided by Microsoft Entra ID and are reused throughout Microsoft Intune when deploying applications, assigning policies and managing enrolled devices.
 
-Understanding this relationship demonstrates a solid understanding of Microsoft's cloud management platform.
+Understanding how these Microsoft cloud services work together demonstrates a solid understanding of modern endpoint management.
 
 ---
 
 # Chapter Summary
 
-In this chapter, the existing Microsoft Entra ID users and Security Groups were reviewed and prepared for Microsoft Intune administration.
+In this chapter, the existing Microsoft Entra ID users and Security Groups were reviewed to prepare the Microsoft Intune laboratory for device enrolment.
 
-The Microsoft Intune subscription was verified, Security Group membership was confirmed, administrative roles were reviewed and the administrator account was validated before device enrolment.
+The Microsoft Intune subscription was verified, Security Group membership was confirmed, administrative roles were reviewed and the administrator account was validated before enrolling the first managed device.
 
-The environment is now fully prepared for the next stage of the laboratory.
-
-In the next chapter, a physical Android device will be enrolled into Microsoft Intune using the Microsoft Company Portal application.
+With the environment fully prepared, the next chapter focuses on enrolling a physical Android device into Microsoft Intune using the Microsoft Company Portal application.
