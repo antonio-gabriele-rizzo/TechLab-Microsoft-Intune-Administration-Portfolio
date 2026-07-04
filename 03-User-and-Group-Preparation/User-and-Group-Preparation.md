@@ -203,6 +203,27 @@ Understanding assigned roles helps administrators verify that the correct permis
 
 ---
 
+# Reviewing Administrative Roles
+
+Microsoft Entra ID uses administrative roles to control which management tasks can be performed within Microsoft Intune and other Microsoft cloud services.
+
+Navigate to:
+
+```text
+Users
+    └── Antonio Gabriele Rizzo
+            └── Assigned roles
+```
+
+Review the roles assigned to the administrator account.
+
+For this laboratory, the account has the permissions required to configure and manage the Microsoft Intune environment.
+
+Understanding administrative roles is important because they determine which tasks an administrator is authorised to perform.
+
+![Assigned Roles](screenshots/entra-user-directory-roles.png)
+---
+
 # Confirming the User Is Ready for Enrolment
 
 Finally, review the administrator account.
