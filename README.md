@@ -115,7 +115,7 @@ TechLab-Microsoft-Intune-Administration-Portfolio
 |---------|--------|
 | 01 - Creating the Intune Lab Environment | ✅ Completed |
 | 02 - Intune Administration Center Overview | ✅ Completed |
-| 03 - User and Group Preparation | ⏳ Planned |
+| 03 - User and Group Preparation | ✅ Completed |
 | 04 - Android Device enrolment | ⏳ Planned |
 | 05 - Compliance Policies | ⏳ Planned |
 | 06 - Configuration Profiles | ⏳ Planned |
