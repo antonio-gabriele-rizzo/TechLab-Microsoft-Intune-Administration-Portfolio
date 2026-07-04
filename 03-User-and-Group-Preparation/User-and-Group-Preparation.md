@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Before devices can be enrolled into Microsoft Intune, the appropriate users and groups must be prepared.
+Before devices can be enrolled on Microsoft Intune, the appropriate users and groups must be prepared.
 
 Microsoft Intune relies on Microsoft Entra ID identities to authenticate users, assign applications, deploy policies and control access to organisational resources.
 
@@ -14,7 +14,7 @@ In this chapter, an existing user account and security group created during the 
 
 # Objectives
 
-After completing this chapter, you should be able to:
+After completing this chapter, I will be able to:
 
 - Identify users available for Microsoft Intune.
 - Verify that Microsoft Intune is correctly licensed.
@@ -27,7 +27,7 @@ After completing this chapter, you should be able to:
 
 # Prerequisites
 
-Before starting this chapter, ensure you have:
+Before starting this chapter, I had already:
 
 - Completed Chapter 01 – Creating the Intune Lab Environment.
 - Completed Chapter 02 – Intune Administration Center Overview.
