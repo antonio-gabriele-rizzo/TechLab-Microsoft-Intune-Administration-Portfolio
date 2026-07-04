@@ -93,7 +93,7 @@ Verify that **Microsoft Intune Plan 1** is listed as an active subscription.
 
 This confirms that the tenant is licensed for Microsoft Intune administration.
 
-![Microsoft Intune Subscription](screenshots/intune-subscription-overview.png)
+![Microsoft Intune Subscription](screenshots/licences.png)
 
 ---
 
