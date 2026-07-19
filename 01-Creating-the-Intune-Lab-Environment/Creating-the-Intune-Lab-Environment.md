@@ -131,13 +131,8 @@ Microsoft Intune Plan 1 provides the core endpoint management capabilities requi
 Using the trial licence allowed me to build a fully functional Microsoft Intune laboratory without requiring an Enterprise subscription.
 
 ![Microsoft Intune Plan 1 Trial](screenshots/intune-trial-selected.png)
-```
 
-This enables the core Microsoft Intune features throughout this laboratory.
-
-![Microsoft Intune Plan 1 Trial](screenshots/intune-trial-selection.png)
-
-
+---
 
 # Configuring Renewal Settings
 
