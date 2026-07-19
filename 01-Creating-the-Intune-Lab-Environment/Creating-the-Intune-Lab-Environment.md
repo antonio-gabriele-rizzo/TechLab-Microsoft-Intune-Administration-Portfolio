@@ -2,69 +2,59 @@
 
 ## Introduction
 
-Microsoft Intune is Microsoft's cloud-based endpoint management solution that enables organisations to securely manage Windows, macOS, Android and iOS devices from a single administration platform.
+Microsoft Intune is Microsoft's cloud-based endpoint management solution that enables organisations to manage and secure Windows, macOS, Android and iOS devices from a single administration portal.
 
-For this portfolio, I used the existing **TechLab Microsoft 365** tenant that was previously created throughout my Microsoft 365 and Microsoft Entra ID repositories. Rather than creating a new tenant, I extended the existing environment by activating a **Microsoft Intune Plan 1 Trial**, allowing all Microsoft cloud services to remain integrated within the same laboratory.
+In this chapter, a Microsoft Intune laboratory is created by adding a **Microsoft Intune Plan 1 Trial** to the existing **TechLab Microsoft 365** tenant that was configured in the previous Microsoft 365 and Microsoft Entra ID repositories.
 
-Building the laboratory in this way more accurately reflects how Microsoft Intune is introduced into an existing organisation. Instead of deploying a completely separate environment, organisations typically add Intune to an established Microsoft 365 tenant so that identities, licences and cloud services work together.
-
-This chapter documents the complete process of preparing the Intune laboratory, activating the trial subscription, verifying the licence, accessing the Microsoft Intune Admin Center and completing the additional configuration required before Android Enterprise devices can be managed.
-
-The completed laboratory will be used throughout the remaining chapters of this repository.
+This environment will be used throughout the remainder of this portfolio.
 
 ---
 
 # Objectives
 
-By completing this chapter, I achieved the following objectives:
+By completing this chapter, I will learn how to:
 
-- Understood the purpose of Microsoft Intune.
-- Reviewed the licensing requirements for Microsoft Intune.
-- Activated a Microsoft Intune Plan 1 Trial.
-- Added Intune to an existing Microsoft 365 tenant.
-- Verified that the subscription had been successfully provisioned.
-- Accessed the Microsoft Intune Admin Center.
-- Configured the Managed Google Play connector for Android Enterprise.
-- Prepared the environment for the remaining laboratory exercises.
+- Understand the purpose of Microsoft Intune
+- Verify the licensing requirements
+- Activate Microsoft Intune Plan 1 Trial
+- Use an existing Microsoft 365 tenant
+- Verify the subscription
+- Access the Microsoft Intune Admin Center
 
 ---
 
 # Prerequisites
 
-Before beginning this chapter, the following prerequisites were already in place:
+Before starting this chapter, ensure you have:
 
-- An existing Microsoft 365 tenant.
-- Microsoft Entra ID configured.
-- Global Administrator permissions.
-- Internet connectivity.
-- A supported web browser.
-- Completion of the previous Microsoft 365 and Microsoft Entra ID repositories.
+- A Microsoft 365 tenant
+- Global Administrator permissions
+- Microsoft Entra ID configured
+- Internet connection
+- A supported web browser
 
 ---
 
-# Understanding Microsoft Intune
+# What is Microsoft Intune?
 
-Microsoft Intune is Microsoft's cloud-based endpoint management platform that combines **Mobile Device Management (MDM)** and **Mobile Application Management (MAM)** capabilities.
+Microsoft Intune is Microsoft's cloud-based **Mobile Device Management (MDM)** and **Mobile Application Management (MAM)** solution.
 
-It enables administrators to manage both corporate-owned and personally owned devices while enforcing organisational security policies and protecting company data.
+It allows administrators to:
 
-Unlike traditional on-premises management solutions, Intune is delivered entirely as a cloud service. Administrators can configure devices, deploy applications, enforce compliance policies and monitor enrolled devices without maintaining management servers within their own infrastructure.
+- Enrol devices
+- Deploy applications
+- Configure security policies
+- Create compliance policies
+- Perform remote device management
+- Monitor managed devices
 
-Throughout this repository, Microsoft Intune will be used to:
-
-- Enrol Windows devices.
-- Configure device compliance policies.
-- Deploy applications.
-- Configure device restrictions.
-- Manage Windows Update policies.
-- Protect organisational data.
-- Monitor managed devices.
+Microsoft Intune integrates directly with Microsoft Entra ID and Microsoft 365 to provide a modern cloud-based endpoint management solution.
 
 ---
 
 # Microsoft Cloud Architecture
 
-The laboratory environment is built using Microsoft's cloud ecosystem.
+The TechLab environment uses the following Microsoft cloud architecture:
 
 ```text
 Microsoft 365
@@ -80,63 +70,75 @@ Microsoft Intune
 Windows  Android
 ```
 
-Each Microsoft cloud service performs a specific role within the environment.
+Microsoft 365 provides productivity services.
 
-**Microsoft 365** provides productivity services such as Exchange Online, SharePoint Online and Microsoft Teams.
+Microsoft Entra ID manages identities and authentication.
 
-**Microsoft Entra ID** provides identity management, authentication and access control.
-
-**Microsoft Intune** provides endpoint management by controlling devices, applications and security policies.
-
-Keeping all three services within the same tenant simplifies administration and allows them to integrate seamlessly.
+Microsoft Intune manages devices.
 
 ---
 
 # Licensing Requirements
 
-Before Microsoft Intune can be used, an appropriate licence must be assigned to the tenant.
+Microsoft Intune requires an appropriate Microsoft licence before devices can be enrolled and managed.
 
-Microsoft provides several licensing options depending on organisational requirements.
+Microsoft Intune can be licensed either as a standalone product or as part of selected Microsoft 365 subscriptions.
 
 Common licensing options include:
 
 - Microsoft Intune Plan 1
-- Microsoft Intune Plan 2
+- Microsoft Intune Plan 2 *(advanced add-on features)*
 - Microsoft 365 Business Premium
 - Microsoft 365 E3
 - Microsoft 365 E5
 
-For this laboratory I selected **Microsoft Intune Plan 1 Trial**.
+For this laboratory, **Microsoft Intune Plan 1 Trial** was used.
 
-The trial provides sufficient functionality to complete every practical exercise included within this repository while avoiding additional licensing costs.
+The trial provides everything required to build a practical Microsoft Intune laboratory and complete every exercise in this repository.
 
 ---
 
 # Creating the Microsoft Intune Trial
 
-To begin building the laboratory, I opened the Microsoft Intune Trial page and signed in using the existing Global Administrator account from my TechLab Microsoft 365 tenant.
+Open the Microsoft Intune Trial page.
 
-Using the existing tenant meant that Microsoft Intune could integrate directly with Microsoft Entra ID without requiring any additional tenant configuration.
+Sign in using your existing Microsoft 365 Global Administrator account.
 
 ![Microsoft Intune Trial Sign-up](screenshots/intune-trial-signup-page.png)
 
-After signing in, Microsoft recognised that an existing Microsoft 365 tenant was already associated with the account.
+---
 
-Instead of creating a new environment, I chose to continue using the existing tenant that had already been configured during the previous repositories.
+# Using an Existing Microsoft 365 Tenant
 
-This approach keeps all Microsoft cloud services together within a single administrative environment and more closely reflects how Microsoft Intune would normally be introduced into an existing organisation.
+After signing in, Microsoft detects the existing TechLab tenant.
+
+Using the existing tenant allows Microsoft Intune to integrate immediately with Microsoft Entra ID and Microsoft 365.
 
 ![Existing Microsoft 365 Tenant](screenshots/intune-existing-tenant-account.png)
 
-Microsoft then presented the available subscription options.
+---
 
-For this laboratory I selected **Microsoft Intune Plan 1 Trial**, which provides the core endpoint management capabilities required throughout the remainder of this portfolio.
+# Selecting Microsoft Intune Plan 1 Trial
 
-![Microsoft Intune Plan 1 Trial](screenshots/intune-trial-selected.png)
+Microsoft displays the available subscription options.
 
-Before activating the subscription, Microsoft displayed the renewal settings.
+Select:
 
-The trial was configured using the following options.
+```text
+Microsoft Intune Plan 1 (Trial)
+```
+
+This enables the core Microsoft Intune features throughout this laboratory.
+
+![Microsoft Intune Plan 1 Trial](screenshots/intune-trial-selection.png)
+
+---
+
+# Configuring Renewal Settings
+
+Before activating the trial, review the renewal settings.
+
+For this laboratory, the following configuration was used:
 
 | Setting | Value |
 |---------|-------|
@@ -144,15 +146,17 @@ The trial was configured using the following options.
 | Subscription Length | 1 Month |
 | Billing Frequency | Monthly |
 
-After activating the subscription, I disabled recurring billing to ensure that the trial would expire automatically rather than converting into a paid subscription.
+After the trial was activated, recurring billing was configured to cancel automatically when the trial expires.
 
 ![Renewal Settings](screenshots/intune-trial-renewal-settings.png)
 
-Once the configuration had been reviewed, I selected **Start Free Trial**.
+---
 
-Microsoft provisioned the licence and confirmed that the Microsoft Intune Plan 1 Trial had been successfully added to the tenant.
+# Activating the Trial
 
-At this point, the licensing requirements for Microsoft Intune had been completed successfully.
+Select **Start Free Trial**.
+
+After a few moments Microsoft confirms that the Microsoft Intune Plan 1 Trial has been successfully added to the tenant.
 
 ![Microsoft Intune Trial Activated](screenshots/intune-trial-activated.png)
 
@@ -160,40 +164,32 @@ At this point, the licensing requirements for Microsoft Intune had been complete
 
 # Verifying the Subscription
 
-After the trial had been activated, I verified that the subscription had been successfully added to the Microsoft 365 tenant.
+Return to the Microsoft 365 Admin Center.
 
-From the Microsoft 365 Admin Center, I navigated to:
+Navigate to:
 
 ```text
 Billing
     └── Your products
 ```
 
-The list of subscriptions now included **Microsoft Intune Plan 1 Trial**, confirming that the licence had been provisioned successfully.
-
-Verifying the subscription before continuing was an important step because Microsoft Intune services are not available until the licence has been assigned correctly to the tenant.
-
-This also confirmed that the tenant was now licensed to use Microsoft Intune throughout the remainder of this repository.
+Verify that **Microsoft Intune Plan 1 Trial** appears in the list of subscriptions.
 
 ![Products Overview](screenshots/intune-products-overview.png)
 
 ---
 
-# Opening the Microsoft Intune Admin Center
+# Opening Microsoft Intune Admin Center
 
-Once the licence had been successfully provisioned, I accessed the Microsoft Intune Admin Center.
-
-There are two methods of opening the administration portal.
+Microsoft Intune can be accessed using either of the following methods.
 
 ### Method 1
-
-Access the Microsoft 365 Admin Center.
 
 ```text
 https://admin.microsoft.com
 ```
 
-Then navigate to:
+Navigate to:
 
 ```text
 Show all
@@ -203,92 +199,54 @@ Show all
 
 ### Method 2
 
-Open the Microsoft Intune Admin Center directly.
+Open the Microsoft Intune Admin Center directly:
 
 ```text
 https://intune.microsoft.com
 ```
 
-During my laboratory build, Microsoft required several minutes to provision the new service before Microsoft Intune appeared within the list of available Admin Centers.
+Once provisioning has completed, the Microsoft Intune Admin Center opens successfully.
 
-This delay is normal when a new Intune subscription is first activated.
-
-Once provisioning had completed, the Microsoft Intune Admin Center loaded successfully and displayed the default administration dashboard.
-
-This confirmed that the Intune environment had been created correctly and was ready for further configuration.
+> **Note**
+>
+> During this laboratory, Microsoft Intune required a few minutes to complete the provisioning process before appearing in the Admin Centers list.
 
 ![Microsoft Intune Admin Center](screenshots/intune-admin-center-home.png)
 
 ---
 
-# Configuring Managed Google Play
-
-Although the Microsoft Intune environment was now operational, I discovered that the Android Enterprise components had not yet been configured.
-
-Microsoft Intune can manage Android Enterprise devices only after a connection has been established with **Managed Google Play**.
-
-Without this configuration, Android Enterprise enrolment, managed Google Play applications and Android work profiles cannot be deployed.
-
-To verify the current configuration, I navigated to:
-
-```text
-Tenant administration
-    └── Connectors and tokens
-            └── Managed Google Play
-```
-
-The portal confirmed that the Managed Google Play connector had been configured successfully.
-
-The page displayed a **Success** status together with the most recent synchronisation time, confirming that communication between Microsoft Intune and Google's enterprise management platform had been established.
-
-This integration enables Microsoft Intune to synchronise approved Android applications, deploy managed Google Play apps to enrolled devices and support Android Enterprise management throughout the remainder of this laboratory.
-
-Completing this configuration ensured that both Windows and Android device management capabilities were fully available before continuing with the subsequent chapters.
-
-![Managed Google Play Connected](screenshots/managed-google-play-connected.png)
-
----
-
 # Key Learnings
 
-Throughout this chapter, I developed a practical understanding of how Microsoft Intune integrates into the wider Microsoft cloud ecosystem.
-
-The key learning outcomes included:
-
-- Understanding the purpose of Microsoft Intune.
-- Reviewing Microsoft Intune licensing options.
-- Activating a Microsoft Intune Plan 1 Trial.
-- Extending an existing Microsoft 365 tenant rather than creating a new environment.
-- Verifying that the Intune subscription had been successfully provisioned.
-- Accessing the Microsoft Intune Admin Center.
-- Understanding the provisioning delay that occurs after activating a new Intune subscription.
-- Configuring the Managed Google Play connector for Android Enterprise.
-- Preparing the laboratory for Windows and Android device management.
+- Intune provides cloud-based endpoint management for Windows, macOS, Android and iOS devices.
+- It integrates directly with Microsoft Entra ID and Microsoft 365.
+- An appropriate licence is required before devices can be enrolled and managed.
+- Intune Plan 1 provides the core features required for this laboratory.
+- A trial subscription can be added to an existing Microsoft 365 tenant.
+- The Admin Center becomes available once the trial has been successfully provisioned.
+- The Admin Center is the primary portal used to manage organisational devices..
 
 ---
 
 # Skills Demonstrated
 
-During this chapter, I demonstrated the following technical skills:
-
-- Microsoft Intune tenant deployment.
-- Microsoft 365 licence management.
-- Microsoft cloud service integration.
-- Microsoft Intune administration.
-- Android Enterprise preparation.
-- Managed Google Play integration.
-- Microsoft 365 administration.
-- Technical documentation using GitHub and Markdown.
-
+- Understanding endpoint management fundamentals
+- Activating an Intune Plan 1 Trial
+- Managing Microsoft 365 licensing
+- Navigating the Microsoft Intune Admin Center
+- Preparing a cloud-based endpoint management laboratory
+- Producing technical documentation using GitHub and Markdown
+  
 ---
 
 # Chapter Summary
 
-In this chapter, I successfully created the Microsoft Intune laboratory by extending my existing Microsoft 365 tenant with a Microsoft Intune Plan 1 Trial.
+In this chapter a Microsoft Intune laboratory environment was successfully created using the existing **TechLab** Microsoft 365 tenant.
 
-I verified that the subscription had been successfully provisioned, confirmed access to the Microsoft Intune Admin Center and completed the additional Managed Google Play configuration required to support Android Enterprise devices.
+The following tasks were completed:
 
-By the end of this chapter, the laboratory environment was fully prepared for the remaining exercises within this repository, providing a solid foundation for managing Windows and Android devices using Microsoft Intune.
+- Activated Microsoft Intune Plan 1 Trial
+- Verified the subscription
+- Accessed the Microsoft Intune Admin Center
+- Prepared the environment for the remaining chapters
 
-The next chapter introduces the Microsoft Intune Admin Center in greater detail and explores the primary administrative areas used to manage users, devices, applications, security and endpoint configuration.
-
+The next chapter introduces the Microsoft Intune Admin Center and explores the main administrative areas used to manage users, devices, applications and security.
