@@ -120,12 +120,13 @@ Using the existing tenant allows Microsoft Intune to integrate immediately with 
 
 # Selecting Microsoft Intune Plan 1 Trial
 
-After signing in and selecting the existing Microsoft 365 tenant, Microsoft displayed the subscriptions that were available for activation.
+After signing in to my existing Microsoft 365 tenant, Microsoft displayed the subscriptions that were available for activation.
 
-For this laboratory, I selected:
+I selected **Microsoft Intune Plan 1 Trial**, which provides the core endpoint management features required throughout this repository, including device enrolment, compliance policies, configuration profiles, application deployment and endpoint security.
 
-```text
-Microsoft Intune Plan 1 (Trial)
+Using the trial licence allowed me to build a fully functional Microsoft Intune laboratory without requiring an Enterprise subscription.
+
+![Microsoft Intune Plan 1 Trial](screenshots/intune-trial-selected.png)
 ```
 
 This enables the core Microsoft Intune features throughout this laboratory.
