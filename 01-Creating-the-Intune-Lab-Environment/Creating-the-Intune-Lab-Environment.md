@@ -137,7 +137,7 @@ This enables the core Microsoft Intune features throughout this laboratory.
 
 ![Microsoft Intune Plan 1 Trial](screenshots/intune-trial-selection.png)
 
----
+
 
 # Configuring Renewal Settings
 
