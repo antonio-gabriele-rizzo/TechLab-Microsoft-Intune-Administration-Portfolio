@@ -118,13 +118,9 @@ Using the existing tenant allows Microsoft Intune to integrate immediately with 
 
 ---
 
-
-Replace it with:
-
-````markdown
 # Selecting Microsoft Intune Plan 1 Trial
 
-After Microsoft detected my existing Microsoft 365 tenant, the available trial subscriptions were displayed.
+After signing in and selecting the existing Microsoft 365 tenant, Microsoft displayed the subscriptions that were available for activation.
 
 For this laboratory, I selected:
 
@@ -249,11 +245,6 @@ In this chapter a Microsoft Intune laboratory environment was successfully creat
 The following tasks were completed:
 
 - Activated Microsoft Intune Plan 1 Trial
-- Verified the subscription
-- Accessed the Microsoft Intune Admin Center
-- Prepared the environment for the remaining chapters
-
-The next chapter introduces the Microsoft Intune Admin Center and explores the main administrative areas used to manage users, devices, applications and security.
 - Verified the subscription
 - Accessed the Microsoft Intune Admin Center
 - Prepared the environment for the remaining chapters
