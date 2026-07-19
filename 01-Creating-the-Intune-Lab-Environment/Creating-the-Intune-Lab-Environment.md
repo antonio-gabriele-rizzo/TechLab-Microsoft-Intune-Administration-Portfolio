@@ -118,11 +118,15 @@ Using the existing tenant allows Microsoft Intune to integrate immediately with 
 
 ---
 
+
+Replace it with:
+
+````markdown
 # Selecting Microsoft Intune Plan 1 Trial
 
-Microsoft displays the available subscription options.
+After Microsoft detected my existing Microsoft 365 tenant, the available trial subscriptions were displayed.
 
-Select:
+For this laboratory, I selected:
 
 ```text
 Microsoft Intune Plan 1 (Trial)
