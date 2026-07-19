@@ -250,3 +250,8 @@ The following tasks were completed:
 - Prepared the environment for the remaining chapters
 
 The next chapter introduces the Microsoft Intune Admin Center and explores the main administrative areas used to manage users, devices, applications and security.
+- Verified the subscription
+- Accessed the Microsoft Intune Admin Center
+- Prepared the environment for the remaining chapters
+
+The next chapter introduces the Microsoft Intune Admin Center and explores the main administrative areas used to manage users, devices, applications and security.
