@@ -101,61 +101,45 @@ Compliance status is also evaluated after enrolment. Initially, the device is as
 
 The successful check-in and compliant status displayed within the Intune Admin Center confirmed that the device was correctly enrolled and ready for further management tasks, including application deployment, compliance policies and configuration profiles covered in the following chapters.
 
-# Summary
-
-In this chapter, I successfully enrolled a physical Android smartphone into Microsoft Intune using the **Android Enterprise Personally Owned with Work Profile** enrolment method.
-
-The enrolment process began by installing Microsoft Company Portal from the Google Play Store before signing in with my Microsoft Entra work account. Company Portal then guided me through creating an Android Enterprise work profile, providing a secure separation between personal and organisational data while enabling Microsoft Intune to manage corporate resources on the device.
-
-After the enrolment completed, I verified that the device had successfully registered with Microsoft Intune by confirming that it appeared within the Microsoft Intune Admin Center with a compliant status and recent check-in information.
-
-Completing this exercise established the foundation required for the remaining chapters in this repository. With the device successfully enrolled, it is now ready to receive managed applications, compliance policies, configuration profiles and security settings through Microsoft Intune.
-
 ---
 
-# Key Takeaways
+# Key Learnings
 
-- Microsoft Intune supports multiple Android Enterprise enrolment methods for different organisational requirements.
-- Microsoft Company Portal is used to register and enrol personally owned Android devices.
-- Android Enterprise work profiles provide logical separation between personal and corporate data.
-- Successfully enrolled devices appear within the Microsoft Intune Admin Center and begin communicating with the Intune service.
-- Device enrolment is the first step in the endpoint lifecycle and enables further management through Microsoft Intune.
+- Microsoft Intune supports multiple Android Enterprise enrolment methods to accommodate different ownership models.
+- Microsoft Company Portal is required to enrol personally owned Android devices into Microsoft Intune.
+- Android Enterprise Work Profiles securely separate organisational data from personal information.
+- Successfully enrolled devices automatically establish communication with Microsoft Intune and begin receiving management capabilities.
+- Device enrolment forms the foundation for deploying applications, configuration profiles and compliance policies.
 
 ---
 
 # Skills Demonstrated
-
-Throughout this chapter, I developed practical experience in:
 
 - Android Enterprise administration
 - Microsoft Intune device enrolment
 - Microsoft Company Portal configuration
 - Mobile Device Management (MDM)
 - Personally owned (BYOD) device enrolment
-- Android Enterprise work profile deployment
+- Android Enterprise Work Profile deployment
 - Endpoint lifecycle management
-- Verifying successful device enrolment
-- Technical documentation
+- Technical documentation using GitHub and Markdown
 
 ---
 
-# Next Chapter
+# Interview Tip
 
-The next chapter focuses on deploying Android Enterprise applications using **Managed Google Play**.
+For junior Microsoft Intune and IT Support roles, it is important to understand that enrolling a device into Microsoft Intune does not simply register the device.
 
-I will integrate Managed Google Play with Microsoft Intune, import Android applications, create deployment groups, assign applications to managed users and verify successful deployment on the enrolled Android device.
+The enrolment process establishes a trusted relationship between Microsoft Intune and the endpoint, allowing administrators to deploy applications, enforce compliance policies, configure security settings and manage the device throughout its lifecycle.
 
-# References
-
-The following Microsoft Learn documentation was used as a reference throughout this chapter.
-
-- Microsoft. (2025). *Android Enterprise enrollment overview*. https://learn.microsoft.com/mem/intune/enrollment/android-enroll
-- Microsoft. (2025). *Set up Android Enterprise personally owned devices with a work profile*. https://learn.microsoft.com/mem/intune/enrollment/android-work-profile-enroll
-- Microsoft. (2025). *Microsoft Intune documentation*. https://learn.microsoft.com/mem/intune/
+Understanding the differences between Android Enterprise enrolment methods and when each should be used demonstrates practical knowledge of modern endpoint management.
 
 ---
 
-**Repository:** TechLab – Microsoft Intune Administration Portfolio  
-**Chapter:** 04 – Android Device Enrolment  
-**Platform:** Microsoft Intune • Android Enterprise • Microsoft Entra ID  
-**Status:** ✅ Completed
+# Chapter Summary
+
+In this chapter, I successfully enrolled a physical Android smartphone into Microsoft Intune using the **Android Enterprise Personally Owned with Work Profile** enrolment method.
+
+Microsoft Company Portal was installed from the Google Play Store before signing in with my Microsoft Entra account and creating a managed work profile. After the enrolment process completed, I verified that the device had successfully registered with Microsoft Intune and was communicating with the service.
+
+With the Android device successfully enrolled, the environment is now ready for deploying managed applications, configuring compliance policies and applying additional endpoint management settings throughout the remaining chapters of this repository.
