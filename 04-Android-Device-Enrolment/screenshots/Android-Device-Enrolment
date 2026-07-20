@@ -156,3 +156,18 @@ Throughout this chapter, I developed practical experience in:
 The next chapter focuses on deploying Android Enterprise applications using **Managed Google Play**.
 
 I will integrate Managed Google Play with Microsoft Intune, import Android applications, create deployment groups, assign applications to managed users and verify successful deployment on the enrolled Android device.
+
+# References
+
+The following Microsoft Learn documentation was used as a reference throughout this chapter.
+
+- Microsoft. (2025). *Android Enterprise enrollment overview*. https://learn.microsoft.com/mem/intune/enrollment/android-enroll
+- Microsoft. (2025). *Set up Android Enterprise personally owned devices with a work profile*. https://learn.microsoft.com/mem/intune/enrollment/android-work-profile-enroll
+- Microsoft. (2025). *Microsoft Intune documentation*. https://learn.microsoft.com/mem/intune/
+
+---
+
+**Repository:** TechLab – Microsoft Intune Administration Portfolio  
+**Chapter:** 04 – Android Device Enrolment  
+**Platform:** Microsoft Intune • Android Enterprise • Microsoft Entra ID  
+**Status:** ✅ Completed
