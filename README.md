@@ -200,9 +200,9 @@ Prepare Microsoft Entra identities before enrolling managed devices.
 
 ---
 
-## 04 – Android Device enrolment
+## 04 – Android Device Enrolment
 
-Enrol a physical Android device into Microsoft Intune.
+Enrol a physical Android device into Microsoft Intune using Android Enterprise and Microsoft Company Portal.
 
 ### Topics covered
 
@@ -213,9 +213,8 @@ Enrol a physical Android device into Microsoft Intune.
 - Device synchronisation
 - Personally owned devices
 - Corporate-owned devices
-- Device properties
-- Device compliance status
-- Removing enrolled devices
+- Device properties overview
+- Device compliance status overview
 
 ### Skills developed
 
@@ -223,7 +222,6 @@ Enrol a physical Android device into Microsoft Intune.
 - Mobile Device Management (MDM)
 - Endpoint enrolment
 - Device lifecycle management
-
 ---
 
 ## 05 – Deploying Android Applications with Managed Google Play
