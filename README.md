@@ -116,9 +116,9 @@ TechLab-Microsoft-Intune-Administration-Portfolio
 | 01 – Creating the Intune Lab Environment | ✅ Completed |
 | 02 – Intune Administration Center Overview | ✅ Completed |
 | 03 – User and Group Preparation | ✅ Completed |
-| 04 – Android Device enrolment | ✅ Completed |
-| 05 – Deploying Android Applications with Managed Google Play | ⏳ Planned |
-| 06 – Compliance Policies | ⏳ Planned |
+| 04 – Android Device Enrollment | ✅ Completed |
+| 05 – Deploying Android Applications with Managed Google Play | ✅ Completed |
+| 06 – Compliance Policies | ✅ Completed |
 | 07 – Configuration Profiles | ⏳ Planned |
 | 08 – Device Management | ⏳ Planned |
 | 09 – Endpoint Security | ⏳ Planned |
