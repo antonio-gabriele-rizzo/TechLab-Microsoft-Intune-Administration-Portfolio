@@ -134,7 +134,13 @@ I configured the following values:
 
 Providing meaningful names and descriptions makes Configuration Profiles easier to identify, maintain and troubleshoot, particularly within production environments where organisations may manage hundreds of policies across multiple operating systems.
 
+Using consistent naming conventions also helps administrators quickly distinguish Configuration Profiles from Compliance Policies, Endpoint Security policies and application deployments.
+
+![Profile Basics](screenshots/configuration-profile-basics.png)
+
 ---
+
+# Understanding Device Restrictions
 
 # Understanding Device Restrictions
 
@@ -302,6 +308,3 @@ Rather than enabling unnecessary restrictions, I deliberately retained the defau
 Finally, I verified that the Configuration Profile had been successfully created within Microsoft Intune and confirmed that the deployment was ready for use.
 
 This exercise demonstrated the complete lifecycle of creating and deploying a Microsoft Intune Configuration Profile while reinforcing the importance of selecting the correct policy type, assigning it through Microsoft Entra Security Groups and understanding the capabilities and limitations of Android Enterprise Personally-Owned Work Profile devices.
-Using consistent naming conventions also helps administrators quickly distinguish Configuration Profiles from Compliance Policies, Endpoint Security policies and application deployments.
-
-![Profile Basics](screenshots/configuration-profile-basics.png)
